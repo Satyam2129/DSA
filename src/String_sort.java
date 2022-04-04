@@ -75,3 +75,37 @@ class Codechef
 
     }
 }
+
+class test1{
+    public static void main(String[] args) {
+      String str = null;
+        System.out.println(str);
+        System.out.println(str.toString());
+    }
+}
+class new12{
+    public static void main(String[] args)
+    {
+        char c = 'R';
+        char ch = 34;
+        c++;
+        ch++;
+        System.out.print(c+" "+ch);
+
+        int a[] = new int[7];
+        System.out.println(a);
+
+        double a1 = 291.04;
+        int b =304;
+        byte c1 = (byte) a1;
+        byte d = (byte) b;
+        System.out.print(c1+" "+d);
+
+        int x=7,y=2;
+        int[] arr1 = new int[10];
+        System.out.println(a[-1]);
+        System.out.println(a[12]);
+        }
+
+    }
+
