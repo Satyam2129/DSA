@@ -117,3 +117,34 @@ class matrix
         }
     }
 }
+
+//reverse a given string
+class hack{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        String arr[] = a.split("\\.");
+        for(int i=arr.length-1;i>=0;i--){
+            if(i==0){
+                System.out.print(arr[i]);
+            }else{
+                System.out.print(arr[i]+".");
+            }
+        }
+    }
+}
+// delete middle node in linked list
+class hack1{
+    public static void main(String[] args) {
+        Scanner sc  = new Scanner(System.in);
+        LinkedList obj = new LinkedList();
+        int size = sc.nextInt();
+        for (int i = 1; i <=size ; i++) {
+            obj.add(sc.nextInt());
+        }
+        obj.remove(size/2);
+        for (int i = 1; i <= size-1; i++) {
+            System.out.print(obj.remove()+" ");
+        }
+    }
+}
