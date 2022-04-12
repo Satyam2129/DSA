@@ -148,3 +148,67 @@ class hack1{
         }
     }
 }
+/*
+Take input two integer arrays sorted in increasing order, and size of arrays. Merge them into a single array sorted in increasing order.
+
+The final sorted array should not be returned by the function, but instead be printed as space separated.
+ */
+class hack2{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int arr[] = new int[size];
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+        int size1 = sc.nextInt();
+        int arr1[] = new int[size1];
+        for(int i=0;i<size1;i++){
+            arr1[i]=sc.nextInt();
+        }
+        int total =size+size1;
+        int arr2[] = new int[total];
+        for(int i=0;i<size;i++){
+            arr2[i]=arr[i];
+        }
+        int j=0;
+        for(int i=size;i<total;i++){
+            arr2[i]=arr1[j];
+            j++;
+            if(j>size1) break;
+        }
+        Arrays.sort(arr2);
+        for(int i=0;i<total;i++){
+            System.out.print(arr2[i]+" ");
+        }
+    }
+}
+
+/*
+Given head of a singly linked list, group all nodes with odd indices together followed by nodes with even indices,and return reordered list.
+
+The first node is considered odd, and the second node is even, and so on.
+
+Note that the relative order inside both the even and odd groups should remain as it was in the input.
+ */
+
+class hack3{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<size;i++){
+            if(i%2==0){
+                System.out.print(arr[i]+" ");
+            }
+        }
+        for(int i=0;i<size;i++){
+            if(i%2!=0){
+                System.out.print(arr[i]+" ");
+            }
+        }
+    }
+}
