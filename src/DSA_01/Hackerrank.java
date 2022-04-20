@@ -212,3 +212,125 @@ class hack3{
         }
     }
 }
+/*
+Given an array, rotate the array to the right by k steps, where k is non-negative.
+
+Input Format
+
+The first line contains an integer n, the number of elements in the array.
+
+Each of the next n lines contains an integer, the data values of the elements in the array.
+
+Next line contains an integer k, the elements to be rotated.
+
+Constraints
+
+1 <= nums.length <= 105
+
+-1000 <= nums[i] <= 1000
+
+0 <= k <= 105
+
+Output Format
+
+Print the rotated array elements space separated.
+
+Sample Input 0
+
+7
+1 2 3 4 5 6 7
+3
+Sample Output 0
+
+5 6 7 1 2 3 4
+Explanation 0
+
+Input: nums = [1,2,3,4,5,6,7], k = 3
+
+Output: [5,6,7,1,2,3,4]
+
+Explanation:
+
+rotate 1 steps to the right: [7,1,2,3,4,5,6]
+
+rotate 2 steps to the right: [6,7,1,2,3,4,5]
+
+rotate 3 steps to the right: [5,6,7,1,2,3,4]
+ */
+
+class hack4{
+    public static void main(String[] args) {
+        Scanner sc= new Scanner (System.in);
+        int size = sc.nextInt();
+        int arr[] = new int[size];
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+        int arr1[]= new int[size];
+        int j=size-1;
+        for(int i=0;i<size;i++){
+            arr1[i]=arr[j];
+            j--;
+        }
+        int k=sc.nextInt();
+        int a = k-1;
+        int arr2[] = new int[size];
+        for (int i=0;i<=k-1;i++){
+            arr2[i]=arr1[a];
+            a--;
+        }
+        int b = 0;
+        for(int i=k;i<size;i++){
+            arr2[i]=arr[b];
+            b++;
+        }
+        for(int i=0;i<size;i++){
+            System.out.print(arr2[i]+" ");
+        }
+    }
+}
+
+/*
+Given a integer x, return x with its digits reversed.
+
+Input Format
+
+Take input a number n.
+
+Constraints
+
+-200 <= n <= 200
+
+Output Format
+
+Print the reversed number
+
+Sample Input 0
+
+-102
+Sample Output 0
+
+-201
+Explanation 0
+
+Number : 210
+
+Reversed Number : 12
+ */
+
+class hack5{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int y = Math.abs(n);
+        int x=0;
+        if(n<0){
+            System.out.print("-");
+        }
+        while(y!=0){
+            x = y%10;
+            y = y/10;
+            System.out.print(x);
+        }
+    }
+}
