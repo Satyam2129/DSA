@@ -1,3 +1,6 @@
+import javax.security.sasl.SaslClient;
+import java.util.Scanner;
+
 public class BST {
     class Node {
         int key;
@@ -76,6 +79,9 @@ public class BST {
             printMax(temp.right);
         }
     }
+    public void checkBst(Node root){
+
+    }
     public static void main(String args[]) {
         Node root = null;
         BST obj = new BST();
@@ -92,5 +98,27 @@ public class BST {
         obj.printMax(root);
         obj.InBet(root);
 
+    }
+}
+
+
+class codechef1{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int size =sc.nextInt();
+        int month =1;
+        for (int i = 1; i <= size; i++) {
+            int rent = sc.nextInt();
+            int price = sc.nextInt();
+            if(rent>=price || price%rent==0){
+                System.out.println(0);
+            }
+            else  {
+                while ((rent*month<price))
+                month++;
+                System.out.println(month-1);
+            }
+
+        }
     }
 }

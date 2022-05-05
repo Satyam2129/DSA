@@ -1,3 +1,9 @@
+import DSA_01.SinglyLinkedList;
+
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.Stack;
+
 class BinaryNode{
     int data;
     BinaryNode left;
@@ -58,6 +64,30 @@ public class TreeDSA {
         System.out.print(root.data+" ");
     }
 
+    public LinkedList Path(BinaryNode root, int val){
+        if(root==null){
+            return null;
+        }
+        if(root.data==val) {
+            LinkedList obj = new LinkedList();
+            obj.add(root.data);
+            return obj;
+        }
+        if(val<root.data){
+            LinkedList Left = Path(root.left,val);
+            if(Left!=null){
+                Left.add(root.data);
+            }
+            return Left;
+        }
+        else{
+            LinkedList Right = Path(root.right,val);
+            if(Right!=null){
+                Right.add(root.data);
+            }
+            return Right;
+        }
+    }
     public static void main(String[] args) {
         BinaryNode root = new BinaryNode(10);
         BinaryNode rleft = new BinaryNode(5);
@@ -75,6 +105,10 @@ public class TreeDSA {
         inOrder(root);
         System.out.println();
         postOrder(root);
+        System.out.println();
+//        TreeDSA obj = new TreeDSA();
+//        System.out.println(obj.Path(root,80));
+
     }
 }
 // Binary tree using array
@@ -134,6 +168,7 @@ class BinaryTreeUsingArray{
             System.out.println("value successfully deleted");
         }
     }
+
 
     public static void main(String[] args) {
         BinaryTreeUsingArray obj = new BinaryTreeUsingArray(6);

@@ -77,6 +77,11 @@ public class gfgBinaryTree {
         }
     }
 
+    int getSize(Node2 root){
+        if (root==null) return 0;
+        else return 1+ getSize(root.left)+getSize(root.right);
+    }
+
     void levelbylevel(Node2 root){
         if(root==null) return;
         Queue<Node2> obj = new LinkedList<>();
@@ -115,5 +120,7 @@ public class gfgBinaryTree {
         obj.LineByLine(root);
         System.out.println();
         obj.levelbylevel(root);
+        System.out.println(obj.getSize(root));
+
     }
 }
